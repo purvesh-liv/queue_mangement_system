@@ -1,46 +1,206 @@
+/* App.css - Dark Theme */
 
-#root {
-  max-width: 1280px;
+/* Root variables */
+:root {
+  --primary: #1e90ff;
+  --success: #28a745;
+  --warning: #ffc107;
+  --info: #17a2b8;
+  --danger: #dc3545;
+  --text: #f0f0f0;
+  --subtext: #aaa;
+  --bg: #121212;
+  --card-bg: #1e1e1e;
+  --border-radius: 8px;
+  --transition: 0.3s ease;
+  --shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* App Container */
+.app {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px;
+}
+
+/* Header */
+header {
   text-align: center;
-}
-body{
-  background-color: rgb(40, 40, 40);
-  color: white;
-}
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  margin-bottom: 30px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--primary);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+header p {
+  color: var(--subtext);
 }
 
-.card {
-  padding: 2em;
+/* Queue Form */
+.queue-form {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
 }
 
-.read-the-docs {
-  color: #888;
+.queue-form h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.queue-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.queue-form input,
+.queue-form select {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  background: #2c2c2c;
+  color: var(--text);
+  transition: border var(--transition), background var(--transition);
+}
+
+.queue-form input:focus,
+.queue-form select:focus {
+  border-color: var(--primary);
+  outline: none;
+  background: #333;
+}
+
+.queue-form button {
+  padding: 10px;
+  background: var(--primary);
+  color: var(--text);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background var(--transition);
+}
+
+.queue-form button:hover {
+  background: #1565c0;
+}
+
+/* Queue Display */
+.queue-display {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.queue-display h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.empty-queue {
+  color: var(--subtext);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Queue Items */
+.queue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.queue-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #2a2a2a;
+  border-radius: var(--border-radius);
+  transition: box-shadow var(--transition);
+}
+
+.queue-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+
+.customer-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.customer-info p {
+  margin: 5px 0 0;
+  color: var(--subtext);
+}
+
+.status {
+  font-weight: bold;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+/* Status colors */
+.status[style*="waiting"] {
+  color: var(--warning);
+}
+
+.status[style*="serving"] {
+  color: var(--success);
+}
+
+.status[style*="completed"] {
+  color: var(--info);
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: background var(--transition);
+}
+
+.server-btn {
+  background: var(--success);
+}
+
+.complete-btn {
+  background: var(--info);
+}
+
+.remove-btn {
+  background: var(--danger);
+}
+
+.actions button:hover {
+  opacity: 0.85;
 }

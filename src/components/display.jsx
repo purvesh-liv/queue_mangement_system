@@ -14,7 +14,7 @@ function Display({ queue, onUpdateStatus,onRemove}) {
   };
   return (
     <div className="queue-display">
-      <h2>Cureent queue</h2>
+      <h2>Current queue</h2>
       {queue.length === 0 ? (
         <p className="empty-queue">No customer data</p>
       ) : (
@@ -45,7 +45,7 @@ function Display({ queue, onUpdateStatus,onRemove}) {
                     className="complete-btn"
                     onClick={() => onUpdateStatus(customer.id, "completed")}
                   >
-                    Serve
+                    Complete
                   </button>
                 )}
                <button className="remove-btn"
