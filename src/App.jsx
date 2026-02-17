@@ -7,6 +7,7 @@ export default function app(){
 
   const addToQueue = (customer) =>{
      //add data to queue
+     
   }
   const updateStatus = (id , newStatus) =>{
      //change data in queue
