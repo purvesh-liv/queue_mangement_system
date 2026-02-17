@@ -7,7 +7,8 @@ export default function app(){
 
   const addToQueue = (customer) =>{
      //add data to queue
-     
+     setQueue([...queue, {...customer, id: Date.now(), status:"waiting"}])
+
   }
   const updateStatus = (id , newStatus) =>{
      //change data in queue
